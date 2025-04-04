@@ -282,77 +282,6 @@
       background: #d1e7dd;
     }
 
-    /* Modal (Pop-Up Form) Styles */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 15px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      animation: fadeInUp 0.5s ease;
-    }
-    .modal-content h3 {
-      color: #1e3a8a;
-      margin-bottom: 20px;
-    }
-    .modal-content form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    .modal-content input {
-      padding: 10px;
-      border: 1px solid #e2e8f0;
-      border-radius: 5px;
-      font-size: 14px;
-      color: #4b5563;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-    .modal-content input:focus {
-      border-color: #60a5fa;
-    }
-    .modal-content button {
-      padding: 10px;
-      background: #60a5fa;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .modal-content button:hover {
-      background: #3b82f6;
-    }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 24px;
-      color: #4b5563;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-    .close-btn:hover {
-      color: #1e3a8a;
-    }
-
     /* Greenwall Section */
     .greenwall {
       background: #f1f5f9;
@@ -368,7 +297,7 @@
       background: #ffffff;
       padding: 20px;
       border-radius: 10px;
-      🙂text-align: center;
+      text-align: center;
       transition: transform 0.3s ease;
     }
     .greenwall-card:hover {
@@ -439,6 +368,97 @@
     .comparison-table .highlight {
       color: #10b981;
       font-weight: 600;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      overflow: auto;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      animation: fadeInDown 0.5s ease;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #4b5563;
+      font-size: 24px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close:hover {
+      color: #1e3a8a;
+    }
+
+    .modal-content h3 {
+      font-size: 24px;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      color: #1e3a8a;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      border-color: #60a5fa;
+    }
+
+    .form-group input:invalid {
+      border-color: #ef4444;
+    }
+
+    .modal-content .btn {
+      width: 100%;
+      background: #60a5fa;
+      color: #ffffff;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .modal-content .btn:hover {
+      background: #3b82f6;
     }
 
     /* Footer */
@@ -548,10 +568,6 @@
         font-size: 12px;
         padding: 10px;
       }
-      .modal-content {
-        width: 95%;
-        padding: 20px;
-      }
     }
     @media (min-width: 769px) {
       .menu-toggle { display: none; }
@@ -615,23 +631,10 @@
       <div class="cta-section">
         <h2>Don’t Let CO2 Hold Your Team Back</h2>
         <p>Boost productivity by up to 90% with Recharge. Act now—your employees deserve better.</p>
-        <a href="#" class="btn" id="get-recharge-btn">Get Recharge Today</a>
+        <a href="#" class="btn">Get Recharge Today</a>
       </div>
     </div>
   </section>
-
-  <!-- Modal (Pop-Up Form) -->
-  <div class="modal" id="recharge-modal">
-    <div class="modal-content">
-      <span class="close-btn" id="close-modal">&times;</span>
-      <h3>Request Recharge</h3>
-      <form id="recharge-form">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="tel" id="mobile" placeholder="Your Mobile Number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number">
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
 
   <!-- Greenwall Biofilter Section -->
   <section id="greenwall" class="greenwall">
@@ -731,6 +734,29 @@
     </div>
   </footer>
 
+  <!-- Modal for Form -->
+  <div id="rechargeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <h3>Get Recharge Today</h3>
+      <form id="rechargeForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="entry.123456789" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile Number</label>
+          <input type="tel" id="mobile" name="entry.987654321" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="entry.456789123" placeholder="Enter your company name" required>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <script>
     // Sticky Header
@@ -749,13 +775,10 @@
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
-        // Only prevent default for links that are not the "Get Recharge Today" button
-        if (!this.id.includes('get-recharge-btn')) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
 
@@ -786,108 +809,64 @@
     `;
     document.head.appendChild(style);
 
-    // Modal (Pop-Up Form) Functionality
-    const modal = document.getElementById('recharge-modal');
-    const getRechargeBtn = document.getElementById('get-recharge-btn');
-    const closeModal = document.getElementById('close-modal');
-    const rechargeForm = document.getElementById('recharge-form');
+    // Modal Handling
+    const modal = document.getElementById('rechargeModal');
+    const btn = document.querySelector('.cta-section .btn');
+    const span = document.querySelector('.close');
 
-    // Open modal when "Get Recharge Today" is clicked
-    getRechargeBtn.addEventListener('click', (e) => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.style.display = 'flex';
+      modal.style.display = 'block';
     });
 
-    // Close modal when close button is clicked
-    closeModal.addEventListener('click', () => {
+    span.addEventListener('click', () => {
       modal.style.display = 'none';
     });
 
-    // Close modal when clicking outside the modal content
     window.addEventListener('click', (e) => {
       if (e.target === modal) {
         modal.style.display = 'none';
       }
     });
 
-    // Handle form submission
-    rechargeForm.addEventListener('submit', async (e) => {
+    // Form Submission to Google Form
+    const form = document.getElementById('rechargeForm');
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('name').value;
       const mobile = document.getElementById('mobile').value;
-      const data = `Name: ${name}, Mobile: ${mobile}\n`;
-      const timestamp = new Date().toISOString();
-      const entry = `[${timestamp}] ${data}`;
+      const company = document.getElementById('company').value;
 
-      // Option 1: Client-side - Download the data as a text file
-      const blob = new Blob([entry], { type: 'text/plain' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'recharge-leads.txt';
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-      document.body.removeChild(a);
+      // Validate mobile number (10 digits)
+      const mobilePattern = /^[0-9]{10}$/;
+      if (!mobilePattern.test(mobile)) {
+        alert('Please enter a valid 10-digit mobile number.');
+        return;
+      }
 
-      // Option 2: Save to GitHub (commented out for security; requires backend for production)
-      /*
-      const GITHUB_TOKEN = 'YOUR_GITHUB_PERSONAL_ACCESS_TOKEN'; // Replace with your PAT (secure in backend)
-      const REPO_OWNER = 'YOUR_GITHUB_USERNAME'; // Replace with your GitHub username
-      const REPO_NAME = 'recharge-leads'; // Replace with your repository name
-      const FILE_PATH = 'leads.txt'; // File in the repository
+      // Prepare data for Google Form
+      const formData = new FormData();
+      formData.append('entry.1115109417', name); // Replace with actual entry ID for Name
+      formData.append('entry.1422824562', mobile); // Replace with actual entry ID for Mobile Number
+      formData.append('entry.841298483', company); // Replace with actual entry ID for Company Name
 
       try {
-        // Fetch the current file content to append the new data
-        const response = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `token ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
+        // Send data to Google Form
+        const response = await fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLScJMcAUNgQ8_ydWzOz9hT5WPH3VYwzwX8X79y1SeBl1T0V-cQ/formResponse', {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors' // Required for Google Forms
         });
 
-        let content = '';
-        let sha = '';
-        if (response.ok) {
-          const fileData = await response.json();
-          content = atob(fileData.content); // Decode base64 content
-          sha = fileData.sha; // Get the file's SHA for updating
-        }
-
-        // Append the new data
-        const newContent = content + entry;
-        const encodedContent = btoa(newContent); // Encode to base64
-
-        // Update the file in GitHub
-        const updateResponse = await fetch(`https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`, {
-          method: 'PUT',
-          headers: {
-            'Authorization': `token ${GITHUB_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json'
-          },
-          body: JSON.stringify({
-            message: `Add new lead: ${name}`,
-            content: encodedContent,
-            sha: sha || undefined // Include SHA if file exists
-          })
-        });
-
-        if (updateResponse.ok) {
-          alert('Thank you! Your details have been submitted successfully.');
-        } else {
-          throw new Error('Failed to save data to GitHub');
-        }
+        // Since mode is 'no-cors', we can't check the response status, but the request should succeed
+        alert('Thank you! Your details have been submitted successfully.');
+        modal.style.display = 'none';
+        form.reset();
       } catch (error) {
-        console.error('Error saving to GitHub:', error);
-        alert('There was an error submitting your details. Please try again later.');
+        console.error('Error:', error);
+        alert('There was an error submitting your details. Please try again.');
       }
-      */
-
-      // Close the modal after submission
-      modal.style.display = 'none';
-      rechargeForm.reset(); // Reset the form
     });
   </script>
 </body>
