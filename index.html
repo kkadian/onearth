@@ -204,6 +204,13 @@
       text-align: center;
       margin-bottom: 20px;
     }
+    h3 {
+      font-size: 24px;
+      color: #1e3a8a;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 15px;
+    }
     p {
       font-size: 16px;
       color: #4b5563;
@@ -218,9 +225,9 @@
       text-align: center;
     }
     .story-step {
-      margin: 80px 0; /* Increased margin for better spacing */
+      margin: 80px 0;
       position: relative;
-      padding-bottom: 40px; /* Space for the divider */
+      padding-bottom: 40px;
     }
     .story-step:not(:last-child)::after {
       content: '';
@@ -230,7 +237,7 @@
       transform: translateX(-50%);
       width: 50%;
       height: 1px;
-      background: #e2e8f0; /* Light gray divider */
+      background: #e2e8f0;
       opacity: 0.5;
     }
     .story-step img {
@@ -255,7 +262,7 @@
       text-align: center;
       color: #fff;
       border-radius: 10px;
-      margin: 80px 0; /* Increased margin for better spacing */
+      margin: 80px 0;
     }
     .cta-section h2 {
       color: #fff;
@@ -278,6 +285,7 @@
     /* Greenwall Section */
     .greenwall {
       background: #f1f5f9;
+      text-align: center;
     }
     .greenwall-grid {
       display: grid;
@@ -308,6 +316,58 @@
     .greenwall-card p {
       font-size: 14px;
       color: #4b5563;
+    }
+
+    /* Greenwall Subsections */
+    .greenwall-impact, .greenwall-why-best {
+      margin: 80px 0;
+      position: relative;
+      padding-bottom: 40px;
+    }
+    .greenwall-impact:not(:last-child)::after, .greenwall-why-best:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;
+      height: 1px;
+      background: #e2e8f0;
+      opacity: 0.5;
+    }
+
+    /* Table Styles */
+    .comparison-table {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 15px;
+      text-align: center;
+      font-size: 14px;
+      color: #4b5563;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .comparison-table th {
+      background: #1e3a8a;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .comparison-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+    .comparison-table tr:hover {
+      background: #e6f0fa;
+    }
+    .comparison-table .highlight {
+      color: #10b981;
+      font-weight: 600;
     }
 
     /* Footer */
@@ -375,6 +435,7 @@
         cursor: pointer;
       }
       h2 { font-size: 24px; }
+      h3 { font-size: 20px; }
       p { font-size: 14px; }
       .story-step h3 { font-size: 20px; }
       .story-step img {
@@ -382,14 +443,14 @@
         margin: 15px auto;
       }
       .story-step {
-        margin: 60px 0; /* Adjusted for mobile */
-        padding-bottom: 30px; /* Adjusted for divider */
+        margin: 60px 0;
+        padding-bottom: 30px;
       }
       .story-step:not(:last-child)::after {
-        width: 70%; /* Wider divider on mobile for better visibility */
+        width: 70%;
       }
       .cta-section {
-        margin: 60px 0; /* Adjusted for mobile */
+        margin: 60px 0;
       }
       .cta-section h2 { font-size: 24px; }
       .cta-section .btn { font-size: 14px; padding: 10px 20px; }
@@ -401,6 +462,20 @@
       }
       header.sticky {
         padding: 4px 0;
+      }
+      .greenwall-grid {
+        grid-template-columns: 1fr;
+      }
+      .greenwall-impact, .greenwall-why-best {
+        margin: 60px 0;
+        padding-bottom: 30px;
+      }
+      .greenwall-impact:not(:last-child)::after, .greenwall-why-best:not(:last-child)::after {
+        width: 70%;
+      }
+      .comparison-table th, .comparison-table td {
+        font-size: 12px;
+        padding: 10px;
       }
     }
     @media (min-width: 769px) {
@@ -497,6 +572,54 @@
           <p>150,000 m³/h of clean air with 40–60% pollutant reduction.</p>
         </div>
       </div>
+
+      <!-- Unmatched Impact Subsection -->
+      <div class="greenwall-impact">
+        <h3>Unmatched Impact</h3>
+        <p>The Greenwall Biofilter delivers unparalleled air purification for urban environments, reducing pollutants by up to 60% while consuming minimal energy. It’s a sustainable solution that transforms city air quality, equivalent to the impact of 90 mature trees in a compact 41.8 m² footprint.</p>
+      </div>
+
+      <!-- Why We Are the Best Subsection -->
+      <div class="greenwall-why-best">
+        <h3>Why We Are the Best</h3>
+        <p>Our Greenwall Biofilter stands out in the market due to its innovative technology, efficiency, and eco-friendly design. Here’s how we compare to traditional air purification solutions:</p>
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Greenwall Biofilter</th>
+              <th>Traditional Air Purifiers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Energy Consumption</td>
+              <td class="highlight">Near-Zero (Passive)</td>
+              <td>High (Active Systems)</td>
+            </tr>
+            <tr>
+              <td>Pollutant Reduction</td>
+              <td class="highlight">40–60% (PM, NOx, VOCs, CO₂)</td>
+              <td>20–40% (Limited Scope)</td>
+            </tr>
+            <tr>
+              <td>Space Efficiency</td>
+              <td class="highlight">90 Trees in 41.8 m²</td>
+              <td>Requires Large Footprint</td>
+            </tr>
+            <tr>
+              <td>Maintenance</td>
+              <td class="highlight">Low (IoT Monitoring)</td>
+              <td>High (Frequent Filter Changes)</td>
+            </tr>
+            <tr>
+              <td>Sustainability</td>
+              <td class="highlight">Eco-Friendly (Algae-Moss)</td>
+              <td>Consumes Non-Renewable Resources</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -554,7 +677,7 @@
       });
     }, { threshold: 0.2 });
 
-    document.querySelectorAll('.story-step, .greenwall-card').forEach(el => {
+    document.querySelectorAll('.story-step, .greenwall-card, .greenwall-impact, .greenwall-why-best').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(50px)';
       el.classList.add('animate-target');
@@ -567,7 +690,7 @@
       .animate-target.animate {
         opacity: 1 !important;
         transform: translateY(0) !important;
-        transition: opacity 0.8s ease, transform 0.8s ease; /* Smoother transition */
+        transition: opacity 0.8s ease, transform 0.8s ease;
       }
     `;
     document.head.appendChild(style);
