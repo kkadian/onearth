@@ -742,15 +742,15 @@
       <form id="rechargeForm">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" name="entry.123456789" placeholder="Enter your name" required>
+          <input type="text" id="name" name="entry.1115109417" placeholder="Enter your name" required>
         </div>
         <div class="form-group">
           <label for="mobile">Mobile Number</label>
-          <input type="tel" id="mobile" name="entry.987654321" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+          <input type="tel" id="mobile" name="entry.1422824562" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
         </div>
         <div class="form-group">
           <label for="company">Company Name</label>
-          <input type="text" id="company" name="entry.456789123" placeholder="Enter your company name" required>
+          <input type="text" id="company" name="entry.841298483" placeholder="Enter your company name" required>
         </div>
         <button type="submit" class="btn">Submit</button>
       </form>
@@ -847,9 +847,10 @@
 
       // Prepare data for Google Form
       const formData = new FormData();
-      formData.append('entry.1115109417', name); // Replace with actual entry ID for Name
-      formData.append('entry.1422824562', mobile); // Replace with actual entry ID for Mobile Number
-      formData.append('entry.841298483', company); // Replace with actual entry ID for Company Name
+      formData.append('entry.1115109417', name); // Name
+      formData.append('entry.1422824562', mobile); // Mobile Number
+      formData.append('entry.841298483', company); // Company Name
+      formData.append('fbzx', '-8108809280110074905'); // Add fbzx parameter
 
       try {
         // Send data to Google Form
