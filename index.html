@@ -160,7 +160,7 @@
     .hero img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures the image covers the area without distortion */
+      object-fit: cover;
       object-position: center;
     }
     .hero::before {
@@ -333,12 +333,12 @@
     }
 
     /* Greenwall Subsections */
-    .greenwall-impact, .greenwall-why-best {
+    .greenwall-impact, .greenwall-why-best, .greenwall-how-it-works {
       margin: 80px 0;
       position: relative;
       padding-bottom: 40px;
     }
-    .greenwall-impact:not(:last-child)::after, .greenwall-why-best:not(:last-child)::after {
+    .greenwall-impact:not(:last-child)::after, .greenwall-why-best:not(:last-child)::after, .greenwall-how-it-works:not(:last-child)::after {
       content: '';
       position: absolute;
       bottom: 0;
@@ -348,6 +348,54 @@
       height: 1px;
       background: #e2e8f0;
       opacity: 0.5;
+    }
+
+    /* How It Works Subsection */
+    .greenwall-how-it-works .step {
+      display: flex;
+      align-items: center;
+      margin: 40px 0;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .greenwall-how-it-works .step:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .greenwall-how-it-works .step-content {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+    .greenwall-how-it-works .step-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+    .greenwall-how-it-works .step-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .greenwall-how-it-works .step-image img:hover {
+      transform: scale(1.05);
+    }
+    .greenwall-how-it-works .step-image figcaption {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #4b5563;
+      font-style: italic;
+    }
+    .greenwall-how-it-works .step-content h4 {
+      font-size: 20px;
+      color: #1e3a8a;
+      margin-bottom: 10px;
+    }
+    .greenwall-how-it-works .step-content p {
+      font-size: 16px;
+      color: #4b5563;
     }
 
     /* Table Styles */
@@ -519,7 +567,7 @@
     /* Responsive Image and Mobile Optimization */
     @media (max-width: 768px) {
       .hero {
-        height: 60vh; /* Adjust height for mobile to better fit 4:5 aspect ratio */
+        height: 60vh;
       }
       .hero h1 {
         font-size: 28px;
@@ -596,12 +644,22 @@
       .greenwall-grid {
         grid-template-columns: 1fr;
       }
-      .greenwall-impact, .greenwall-why-best {
+      .greenwall-impact, .greenwall-why-best, .greenwall-how-it-works {
         margin: 60px 0;
         padding-bottom: 30px;
       }
-      .greenwall-impact:not(:last-child)::after, .greenwall-why-best:not(:last-child)::after {
+      .greenwall-impact:not(:last-child)::after, .greenwall-why-best:not(:last-child)::after, .greenwall-how-it-works:not(:last-child)::after {
         width: 70%;
+      }
+      .greenwall-how-it-works .step {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .greenwall-how-it-works .step:nth-child(even) {
+        flex-direction: column;
+      }
+      .greenwall-how-it-works .step-content {
+        text-align: center;
       }
       .comparison-table th, .comparison-table td {
         font-size: 12px;
@@ -689,7 +747,7 @@
   <section id="greenwall" class="greenwall">
     <div class="container">
       <h2>Greenwall Biofilter: Clean Air for Cities</h2>
-      <p>Our patented algae-moss biofilter tackles PM, gaseous pollutants, and VOCs with near-zero energy consumption—delivering the power of 90 trees in just 41.8 m².</p>
+      <p>Our patented algae-moss biofilter tackles particulate matter (PM), gaseous pollutants, and volatile organic compounds (VOCs) with near-zero energy consumption—delivering the air purification power equivalent to 90 mature trees in just 41.8 m². Designed for urban environments, the Greenwall Biofilter combines nature and technology to create cleaner, healthier air sustainably.</p>
       <div class="greenwall-grid">
         <div class="greenwall-card">
           <i class="fas fa-cloud"></i>
@@ -710,6 +768,68 @@
           <i class="fas fa-wind"></i>
           <h3>Clean Output</h3>
           <p>150,000 m³/h of clean air with 40–60% pollutant reduction.</p>
+        </div>
+      </div>
+
+      <!-- How It Works Subsection -->
+      <div class="greenwall-how-it-works">
+        <h3>How It Works</h3>
+        <p>The Greenwall Biofilter uses a multi-layered approach to purify urban air, combining the natural filtration capabilities of ferns and algae with an innovative misting system for optimal performance. Here’s a step-by-step look at the process:</p>
+        
+        <!-- Step 1: Primary Filter (Fern) -->
+        <div class="step">
+          <div class="step-content">
+            <h4>Primary Filter: Fern Layer</h4>
+            <p>The process begins with the fern layer, which acts as the primary filter. The fern’s dense foliage and high surface area effectively capture fine particulate matter (PM₂.₅, PM₁₀) and absorb residual gaseous pollutants such as NOx and VOCs. Beyond filtration, the ferns contribute to oxygen release and microclimate cooling, creating a healthier urban environment.</p>
+          </div>
+          <div class="step-image">
+            <figure>
+              <img src="assets/images/rope.webp" alt="Fern Layer">
+              <figcaption>Fern layer capturing pollutants</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Step 2: Secondary Filter (Algae) -->
+        <div class="step">
+          <div class="step-content">
+            <h4>Secondary Filter: Algae Layer</h4>
+            <p>Next, the air passes through the algae layer, which serves as a secondary filtration system. Algae metabolize gaseous pollutants like CO₂, NOx, and VOCs, converting them into biomass through photosynthesis. The algae’s sticky biofilm also traps any remaining fine particulate matter (PM₂.₅, PM₁₀) that may have passed through the fern layer, enhancing overall air purification efficiency.</p>
+          </div>
+          <div class="step-image">
+            <figure>
+              <img src="assets/images/algae.webp" alt="Algae Layer">
+              <figcaption>Algae layer metabolizing pollutants</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Step 3: Misting System -->
+        <div class="step">
+          <div class="step-content">
+            <h4>Autocleaning: Misting System</h4>
+            <p>The misting system plays a crucial role in maintaining the biofilter’s efficiency. It prevents dust buildup by washing away trapped pollutants and ensures optimal humidity levels for the growth of both algae and ferns. This autocleaning mechanism keeps the system running smoothly with minimal maintenance.</p>
+          </div>
+          <div class="step-image">
+            <figure>
+              <img src="assets/images/misting.jpg" alt="Misting System">
+              <figcaption>Misting system maintaining the biofilter</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Step 4: Biofilter Output -->
+        <div class="step">
+          <div class="step-content">
+            <h4>Biofilter Output: Clean Air Release</h4>
+            <p>After passing through the biofilter, the polluted air is transformed into fresh, purified air. The Greenwall Biofilter releases up to 150,000 m³/h of clean air back into the environment, achieving a 40–60% reduction in pollutants. This sustainable solution not only cleans the air but also contributes to a greener, healthier urban landscape.</p>
+          </div>
+          <div class="step-image">
+            <figure>
+              <img src="assets/images/biofilter.jpg" alt="Greenwall Biofilter">
+              <figcaption>The Greenwall Biofilter in action</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
 
@@ -840,7 +960,7 @@
       });
     }, { threshold: 0.2 });
 
-    document.querySelectorAll('.story-step, .greenwall-card, .greenwall-impact, .greenwall-why-best').forEach(el => {
+    document.querySelectorAll('.story-step, .greenwall-card, .greenwall-impact, .greenwall-why-best, .greenwall-how-it-works').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(50px)';
       el.classList.add('animate-target');
